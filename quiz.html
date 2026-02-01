@@ -57,7 +57,7 @@
     <input type="radio" name="answer" value="5"> Dinos rasieren.
   </label><br>
 
-  <button onclick="checkAnswer()">Submit</button>
+  <button onclick="checkAnswer()">Submitten</button>
 
   <div id="result"></div>
 </div>
@@ -74,10 +74,10 @@
     }
 
     if (selected.value === "4") {
-      result.textContent = "Correct! ✅";
+      result.textContent = "Richtig! ✅";
       result.style.color = "green";
     } else {
-      result.textContent = "Incorrect ❌";
+      result.textContent = "Leider falsch ❌";
       result.style.color = "red";
     }
   }
