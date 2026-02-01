@@ -23,7 +23,26 @@
       color: #555;
     }
   </style>
+<script>
+  function updateDateTime() {
+    const now = new Date();
+    document.getElementById("datetime").textContent = now.toLocaleString();
+  }
+
+  // Update every second
+  setInterval(updateDateTime, 1000);
+  updateDateTime(); // Initial call
+</script>
 </head>
+
+  <!-- Date & Time Display -->
+<div id="datetime" style="
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+"></div>
 <body>
 
   <a href="quiz.html">Hier klicken</a>
