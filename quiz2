@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Next Page</title>
+  <meta charset="UTF-8">
+</head>
+<body style="font-family:Arial; text-align:center; margin-top:80px;">
+
+  <h1>🎉 You passed the test!</h1>
+  <p>Welcome to the next page.</p>
+
+</body>
+</html>
