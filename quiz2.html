@@ -1,13 +1,123 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Next Page</title>
+  <title>Mobile Quiz</title>
   <meta charset="UTF-8">
-</head>
-<body style="font-family:Arial; text-align:center; margin-top:80px;">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <h1>🎉 You passed the test!</h1>
-  <p>Welcome to the next page.</p>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .quiz-box {
+      background: white;
+      padding: 25px;
+      border-radius: 16px;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      font-size: 22px;
+      padding: 12px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      background: #f2f2f2;
+      cursor: pointer;
+    }
+
+    input[type="radio"] {
+      transform: scale(1.6);
+      margin-right: 12px;
+    }
+
+    button {
+      width: 100%;
+      padding: 14px;
+      font-size: 20px;
+      font-weight: bold;
+      border: none;
+      border-radius: 10px;
+      background: #4f46e5;
+      color: white;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    #result {
+      margin-top: 18px;
+      font-size: 20px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="quiz-box">
+  <h2>Was brauchen Dinosaurier, um glücklich zu sein?</h2>
+
+  <label>
+    <input type="radio" name="answer" value="3"> Gutes Gehege und Futter.
+  </label><br>
+
+  <label>
+    <input type="radio" name="answer" value="4"> Fernsehunterhaltung.
+  </label><br>
+
+  <label>
+    <input type="radio" name="answer" value="5"> Coole Kleider.
+  </label><br>
+
+  <button onclick="checkAnswer()">Antwort abschicken</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  function checkAnswer() {
+    const selected = document.querySelector('input[name="answer"]:checked');
+    const result = document.getElementById('result');
+
+    if (!selected) {
+      result.textContent = "Bitte eine Antwort auswählen.";
+      result.style.color = "orange";
+      return;
+    }
+
+    if (selected.value === "3") {
+      result.textContent = "Richtig! ✅";
+      result.style.color = "green";
+       // Redirect to next page after 1 second
+      setTimeout(() => {
+        window.location.href = "quiz3.html";
+      }, 1000);
+    } else {
+      result.textContent = "Leider falsch ❌";
+      result.style.color = "red";
+    }
+  }
+</script>
 
 </body>
 </html>
