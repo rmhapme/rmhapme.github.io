@@ -1,12 +1,87 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Second Page</title>
+  <title>Multiple Choice Test</title>
   <meta charset="UTF-8">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .quiz-box {
+      background: white;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      max-width: 400px;
+      width: 100%;
+    }
+
+    h2 {
+      margin-bottom: 15px;
+    }
+
+    button {
+      margin-top: 15px;
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 15px;
+      font-weight: bold;
+    }
+  </style>
 </head>
-<body style="text-align:center; margin-top:50px; font-family:Arial;">
-  
-  <p>You are on the second page.</p>
+<body>
+
+<div class="quiz-box">
+  <h2>Was ist das Hauptziel im Spiel Jurassic World Evolution 2?</h2>
+
+  <label>
+    <input type="radio" name="answer" value="3"> 3
+  </label><br>
+
+  <label>
+    <input type="radio" name="answer" value="4"> 4
+  </label><br>
+
+  <label>
+    <input type="radio" name="answer" value="5"> 5
+  </label><br>
+
+  <button onclick="checkAnswer()">Submit</button>
+
+  <div id="result"></div>
+</div>
+
+<script>
+  function checkAnswer() {
+    const selected = document.querySelector('input[name="answer"]:checked');
+    const result = document.getElementById('result');
+
+    if (!selected) {
+      result.textContent = "Please select an answer.";
+      result.style.color = "orange";
+      return;
+    }
+
+    if (selected.value === "4") {
+      result.textContent = "Correct! ✅";
+      result.style.color = "green";
+    } else {
+      result.textContent = "Incorrect ❌";
+      result.style.color = "red";
+    }
+  }
+</script>
 
 </body>
 </html>
