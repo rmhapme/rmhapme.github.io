@@ -1,51 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Home</title>
+  <title>Link Activation by Date</title>
   <meta charset="UTF-8">
   <style>
-    body {
-      margin: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      font-family: Arial, sans-serif;
-      background: white;
-    }
     a {
-      font-size: 64px;
+      font-size: 24px;
+      color: gray;
       text-decoration: none;
-      color: black;
-      font-weight: bold;
+      pointer-events: none; /* Disable by default */
     }
-    a:hover {
-      color: #555;
+    a.active {
+      color: blue;
+      pointer-events: auto; /* Enable click */
     }
   </style>
-<script>
-  function updateDateTime() {
-    const now = new Date();
-    document.getElementById("datetime").textContent = now.toLocaleString('de-DE');
-  }
-
-  // Update every second
-  setInterval(updateDateTime, 1000);
-  updateDateTime(); // Initial call
-</script>
 </head>
+<body style="text-align:center; margin-top:50px; font-family:Arial;">
 
-  <!-- Date & Time Display -->
-<div id="datetime" style="
-    font-size: 28px;
-    font-weight: bold;
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
-"></div>
-<body>
+  <a href="quiz.html" id="specialLink">Hier klicken</a>
+Wird erst an Noel's Geburtstag aktiviert.
+  <script>
+    const link = document.getElementById("specialLink");
 
-  <a href="quiz.html">Hier klicken</a>
+    const today = new Date();
+    const targetDate = new Date(2026, 1, 21); // Month is 0-based: 0 = Jan, 1 = Feb
+
+    if (
+      today.getFullYear() === targetDate.getFullYear() &&
+      today.getMonth() === targetDate.getMonth() &&
+      today.getDate() === targetDate.getDate()
+    ) {
+      link.classList.add("active"); // Activate the link
+    } else {
+      link.textContent = "Link inactive until 21.02.2026";
+    }
+  </script>
 
 </body>
 </html>
