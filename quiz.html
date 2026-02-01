@@ -108,6 +108,10 @@
     if (selected.value === "4") {
       result.textContent = "Richtig! ✅";
       result.style.color = "green";
+       // Redirect to next page after 1 second
+      setTimeout(() => {
+        window.location.href = "quiz2.html";
+      }, 1000);
     } else {
       result.textContent = "Leider falsch ❌";
       result.style.color = "red";
