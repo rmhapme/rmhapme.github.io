@@ -49,23 +49,19 @@
 <body style="text-align:center; margin-top:50px; font-family:Arial;">
 
   <a href="quiz.html" id="specialLink">Hier klicken</a>
-//  <div id="message"></div>
+
   <script>
-    const link = document.getElementById("specialLink");
+  const link = document.getElementById("specialLink");
 
-    const today = new Date();
-    const targetDate = new Date(2026, 1, 1); // Month is 0-based: 0 = Jan, 1 = Feb
+  const today = new Date();
+  const targetDate = new Date(2026, 1, 1); // Feb 1, 2026
 
-  //  if (
-    // Activate link if today >= targetDate
-    if (today >= targetDate) {
-      link.classList.add("active");
-//      message.textContent = "Link is active ✅";
-    } else {
-      link.textContent = "Wird erst an Noel's Geburtstag aktiviert.";
-//      message.textContent = "Please return on 01.02.2026";
-    }
-  </script>
+  if (today >= targetDate) {
+    link.classList.add("active"); // Enable link
+  } else {
+    link.textContent = "Wird erst an Noel's Geburtstag aktiviert.";
+  }
+</script>
 
 </body>
 </html>
