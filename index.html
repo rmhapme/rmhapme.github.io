@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Link Activation by Date</title>
   <meta charset="UTF-8">
+  <title>Link Activation by Date</title>
+
   <style>
-   body {
+    body {
       font-family: Arial, sans-serif;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
@@ -21,7 +23,7 @@
       font-weight: bold;
       text-decoration: none;
       color: gray;
-      pointer-events: none; /* Disabled by default */
+      pointer-events: none;
       padding: 20px 40px;
       border-radius: 12px;
       background: #ddd;
@@ -32,7 +34,7 @@
     a.active {
       color: white;
       background: #4f46e5;
-      pointer-events: auto; /* Enable click */
+      pointer-events: auto;
     }
 
     a.active:hover {
@@ -41,27 +43,32 @@
 
     #message {
       margin-top: 20px;
-      font-size: 20px;
+      font-size: 18px;
       color: #555;
     }
   </style>
 </head>
-<body style="text-align:center; margin-top:50px; font-family:Arial;">
+
+<body>
 
   <a href="quiz.html" id="specialLink">Hier klicken</a>
+  <div id="message"></div>
 
   <script>
-  const link = document.getElementById("specialLink");
+    const link = document.getElementById("specialLink");
+    const message = document.getElementById("message");
 
-  const today = new Date();
-  const targetDate = new Date(2026, 1, 1); // Feb 1, 2026
+    const today = new Date();
+    const targetDate = new Date(2026, 1, 1); // Feb 1, 2026 (Month is 0-based)
 
-  if (today >= targetDate) {
-    link.classList.add("active"); // Enable link
-  } else {
-    link.textContent = "Wird erst an Noel's Geburtstag aktiviert.";
-  }
-</script>
+    if (today >= targetDate) {
+      link.classList.add("active");
+      message.textContent = "Link ist jetzt aktiv ✅";
+    } else {
+      link.textContent = "Wird erst an Noel's Geburtstag aktiviert.";
+      message.textContent = "Bitte später wiederkommen.";
+    }
+  </script>
 
 </body>
 </html>
