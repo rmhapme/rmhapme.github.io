@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Download PDF</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f7f7f7;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+
+    .container {
+      background: white;
+      padding: 30px 20px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      max-width: 420px;
+      width: 100%;
+    }
+
+    h1 {
+      font-size: 22px;
+      margin-bottom: 20px;
+    }
+
+    a.download-btn {
+      display: block;
+      width: 100%;
+      padding: 16px;
+      font-size: 18px;
+      font-weight: bold;
+      color: white;
+      text-decoration: none;
+      background: #4f46e5;
+      border-radius: 12px;
+      transition: transform 0.05s ease, background 0.2s ease;
+    }
+
+    a.download-btn:active {
+      transform: scale(0.97);
+      background: #3730a3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h1>Download Your PDF</h1>
+    <a class="download-btn" href="rofu.pdf" download>
+      📄 Download PDF
+    </a>
+  </div>
+
+</body>
+</html>
