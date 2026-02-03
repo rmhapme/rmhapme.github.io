@@ -1,44 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Debug Test</title>
+  <meta charset="UTF-8">
+  <title>Link Activation by Date</title>
 
-<style>
-  a {
-    color: gray;
-    pointer-events: none;
-    font-size: 28px;
-  }
-  a.active {
-    color: green;
-    pointer-events: auto;
-  }
-</style>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f7f7f7;
+      text-align: center;
+      padding: 20px;
+    }
+
+    a {
+      font-size: 32px;
+      font-weight: bold;
+      text-decoration: none;
+      color: gray;
+      pointer-events: none;
+      padding: 20px 40px;
+      border-radius: 12px;
+      background: #ddd;
+      display: inline-block;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    a.active {
+      color: white;
+      background: #4f46e5;
+      pointer-events: auto;
+    }
+
+    a.active:hover {
+      background: #3730a3;
+    }
+
+    #message {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #555;
+    }
+  </style>
 </head>
 
 <body>
-<h1 style="color:red;">TEST — NEW 1VERSION</h1>
 
-<a href="quiz.html" id="specialLink">Hierss klicken</a>
-<p id="debug"></p>
+  <a href="quiz.html" id="specialLink">Hier klicken</a>
+  <div id="message"></div>
 
-<script>
-  const link = document.getElementById("specialLink");
-  const debug = document.getElementById("debug");
+  <script>
+    const link = document.getElementById("specialLink");
+    const message = document.getElementById("message");
 
-  const today = new Date();
-  const targetDate = new Date(2026, 1, 1);
+    const today = new Date();
+    const targetDate = new Date(2026, 1, 1); // Feb 1, 2026 (Month is 0-based)
 
-  debug.innerHTML = 
-    "Today: " + today + "<br>" +
-    "Target: " + targetDate + "<br>" +
-    "Comparison: " + (today >= targetDate);
-
-  if (today >= targetDate) {
-    link.classList.add("active");
-  }
-</script>
+    if (today >= targetDate) {
+      link.classList.add("active");
+      message.textContent = "Link ist jetzt aktiv ✅";
+    } else {
+      link.textContent = "Wird erst an Noel's Geburtstag aktiviert.";
+      message.textContent = "Bitte später wiederkommen.";
+    }
+  </script>
 
 </body>
 </html>
