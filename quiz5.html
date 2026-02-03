@@ -75,18 +75,18 @@
 <body>
 
 <div class="quiz-box">
-  <h2>Welcher Modus erzählt Film-Geschichten?</h2>
+  <h2>Welcher Dino ist schwerer zu kontrollieren – T-Rex oder Indominus?</h2>
 
   <label>
-    <input type="radio" name="answer" value="3"> Kampagnenmodus.
+    <input type="radio" name="answer" value="3"> T-Rex.
   </label><br>
 
   <label>
-    <input type="radio" name="answer" value="4"> Kochmodus.
+    <input type="radio" name="answer" value="4"> Indominus.
   </label><br>
 
   <label>
-    <input type="radio" name="answer" value="5"> Rennmodus.
+    <input type="radio" name="answer" value="5"> Beide gleich.
   </label><br>
 
   <button onclick="checkAnswer()">Antwort abschicken</button>
@@ -105,7 +105,7 @@
       return;
     }
 
-    if (selected.value === "3") {
+    if (selected.value === "4") {
       result.textContent = "Richtig! ✅";
       result.style.color = "green";
        // Redirect to next page after 1 second
